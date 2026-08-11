@@ -1,16 +1,27 @@
-// Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ==========================================================================
+   Kishan Raj — Portfolio Production JavaScript
+   Features: Automated dynamic footer year, accessible mobile navigation menu,
+   and character-by-character typing effect (respects prefers-reduced-motion).
+   ========================================================================== */
 
-// Mobile nav toggle
+// 1. Dynamic Footer Year Configuration
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = String(new Date().getFullYear());
+}
+
+// 2. Mobile Responsive Navigation Configuration
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.querySelector('.nav-links');
 
-if (navToggle) {
+if (navToggle && navLinks) {
+  // Toggle visibility status via trigger element
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
+  // Automatically collapse overlay upon item interaction
   navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
@@ -19,23 +30,31 @@ if (navToggle) {
   });
 }
 
-// One-time typed line in hero — no scroll triggers, respects reduced motion
+// 3. One-Time Vanilla Micro-Typing Animation Engine
 const typedEl = document.getElementById('typed');
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const line = 'open to Software Engineer roles';
+const lineToType = 'open to Software Engineer roles';
 
 if (typedEl) {
+  // Respect system settings requesting decreased animation overhead
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   if (prefersReducedMotion) {
-    typedEl.textContent = line;
+    // Render string instantaneously for accessibility comfort
+    typedEl.textContent = lineToType;
   } else {
-    let i = 0;
-    const type = () => {
-      if (i <= line.length) {
-        typedEl.textContent = line.slice(0, i);
-        i++;
-        setTimeout(type, 35);
+    let characterIndex = 0;
+    
+    const executeTypingSequence = () => {
+      if (characterIndex <= lineToType.length) {
+        // Sequentially build up string content 
+        typedEl.textContent = lineToType.slice(0, characterIndex);
+        characterIndex++;
+        // Maintain consistent pacing interval per keystroke tick (35ms)
+        setTimeout(executeTypingSequence, 35);
       }
     };
-    type();
+    
+    // Fire event instantly as script finishes loading on runtime initialization
+    executeTypingSequence();
   }
 }
