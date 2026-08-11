@@ -1,8 +1,27 @@
 # Kishan Raj — Portfolio
 
-Personal portfolio site. Static HTML/CSS/JS, no build step, no framework.
+My personal portfolio site — built with HTML, CSS, and JavaScript showcasing my projects, skills, and resume.
 
-## Structure
+🔗 **Live site:** [https://kishan-raj-portfolio.vercel.app/]
+
+---
+
+## ✨ Features
+
+- Responsive layout that works across desktop, tablet, and mobile
+- Animated self section with a type effect
+- Sections for About, Skills, Projects, and Contact
+- Downloadable resume (PDF)
+- Links out to GitHub, LinkedIn, LeetCode, and CodeChef profiles
+- Zero dependencies — loads instantly, no bundler required
+
+## 🛠️ Built With
+
+- HTML5
+- CSS3 (custom theme, responsive design)
+- Vanilla JavaScript
+
+## 📁 Structure
 
 ```
 kishan-portfolio/
@@ -13,38 +32,19 @@ kishan-portfolio/
 │   └── script.js       # nav toggle, footer year, hero type effect
 ├── assets/
 │   ├── favicon.svg
-│   └── resume.pdf       # add your actual resume PDF here
+│   └── resume.pdf       # actual resume PDF
 ├── .gitignore
 └── README.md
 ```
 
-## Run locally
 
-No build tools needed. Either:
+## 📬 Contact
 
-- Open `index.html` directly in a browser, or
-- Serve it with a local server (recommended, avoids relative-path quirks):
+- GitHub: [https://github.com/knight-54]
+- LinkedIn: [https://www.linkedin.com/in/kishanraj-54s/]
+- LeetCode: [https://leetcode.com/u/midnight05/]
+- CodeChef: [https://www.codechef.com/users/darklight05]
 
-```bash
-# Python
-python3 -m http.server 5500
+---
 
-# or Node
-npx serve .
-```
-
-Then visit `http://localhost:5500`.
-
-## Before deploying
-
-1. Drop your actual resume PDF into `assets/resume.pdf`.
-2. Replace every `YOUR_GITHUB`, `YOUR_LINKEDIN`, `YOUR_LEETCODE`, `YOUR_CODECHEF`
-   placeholder in `index.html` with your real profile URLs.
-3. Optional: swap `assets/favicon.svg` for your own mark.
-
-## Deploy
-
-See deployment steps in the chat where this was generated, or:
-1. Push this folder to a GitHub repo.
-2. Import the repo on [vercel.com](https://vercel.com) — no framework preset,
-   no build command needed (it's a static site).
+⭐ If you found this portfolio template useful, feel free to fork it and make it your own.
