@@ -32,7 +32,7 @@ if (navToggle && navLinks) {
 
 // 3. One-Time Vanilla Micro-Typing Animation Engine
 const typedEl = document.getElementById('typed');
-const lineToType = 'open to Software Engineer roles';
+const lineToType = 'turning complex challenges into clean, efficient and scalable code.';
 
 if (typedEl) {
   // Respect system settings requesting decreased animation overhead
