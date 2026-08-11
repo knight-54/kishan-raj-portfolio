@@ -286,6 +286,11 @@ h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
 
 .project-head h3 { font-size: 18px; }
 
+.project-links {
+  display: flex;
+  gap: 14px;
+}
+
 .project-link {
   font-family: var(--mono);
   font-size: 13px;
@@ -324,6 +329,65 @@ h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
   border: 1px solid var(--border);
   color: var(--text-dim);
   padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* Project case-study blocks (problem / what i built / impact / status) */
+.project-shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 4px 0 20px;
+}
+
+.project-shots-single {
+  grid-template-columns: 1fr;
+  max-width: 520px;
+}
+
+.project-shot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  object-fit: cover;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.project-shot:hover {
+  border-color: var(--accent);
+  transform: scale(1.015);
+}
+
+.case-block {
+  margin-bottom: 16px;
+}
+.case-block:last-of-type {
+  margin-bottom: 18px;
+}
+
+.case-label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.case-block p:not(.case-label) {
+  color: var(--text-dim);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.project-case code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  color: var(--accent);
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border-soft);
+  padding: 0.05em 0.4em;
   border-radius: 4px;
 }
 
@@ -391,6 +455,7 @@ h2, h3 { font-weight: 600; letter-spacing: -0.01em; }
 @media (max-width: 720px) {
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
+  .project-shots { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
