@@ -47,7 +47,7 @@
         </p>
         <p class="hero-sub mono">
           <span class="prompt">kishan@dev</span><span class="colon">:</span><span class="path">~</span><span class="colon">$</span>
-          <span class="typed" id="typed"></span><span class="cursor">_</span>
+          <span class="typed" id="typed">open to Software Engineer roles.</span><span class="cursor">_</span>
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -99,33 +99,133 @@
       <div class="wrap">
         <p class="section-label mono">// projects</p>
 
-        <article class="project-card">
+        <!-- PROJECT 1 -->
+        <article class="project-card project-case">
           <div class="project-head">
             <h3>Distributed Collaborative IDE</h3>
-            <a href="https://github.com/knight-54/DevTogether" target="_blank" rel="noopener" class="project-link">Source ↗</a>
+            <div class="project-links">
+              <a href="https://github.com/knight-54/DevTogether" target="_blank" rel="noopener" class="project-link">Source ↗</a>
+              <!-- <a href="LIVE_DEMO_URL" target="_blank" rel="noopener" class="project-link">Live ↗</a> -->
+            </div>
           </div>
-          <ul class="project-points">
-            <li>Engineered a real-time collaborative code editor using WebSockets, supporting multi-user live editing with instant synchronization — reducing cross-device latency by 15ms.</li>
-            <li>Built a scalable backend execution engine with multi-language support and MongoDB session management, cutting build times by 20%.</li>
-          </ul>
+
+          <div class="project-shots">
+            <img class="project-shot" src="assets/devtogether-join.png" alt="DevTogether join-room screen with room ID and username fields" />
+            <img class="project-shot" src="assets/devtogether-live-sync.png" alt="Two browser windows showing the same code syncing live between two users" />
+            <img class="project-shot" src="assets/devtogether-db.png" alt="MongoDB Compass showing persisted room and code documents" />
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">the problem</p>
+            <p>Most collaborative editors either lag under concurrent edits or fall apart when
+              sessions scale past a handful of users — conflict resolution and sync latency
+              are the two things that quietly break these tools in production.</p>
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">what i built</p>
+            <p>A real-time collaborative code editor over WebSockets with a custom sync layer
+              for multi-user live editing, a scalable backend execution engine with multi-language
+              support, and MongoDB-backed session management so state survives reconnects and
+              scales past a single-server setup.</p>
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">impact</p>
+            <p>Cross-device edit latency down 15ms; build/execution times cut 20%; currently
+              handling 350+ users across live sessions.</p>
+          </div>
+
           <ul class="tag-list mono">
             <li>React</li><li>WebSockets</li><li>Node.js</li><li>Express.js</li><li>MongoDB</li><li>REST APIs</li>
           </ul>
         </article>
 
-        <article class="project-card">
+        <!-- PROJECT 2 -->
+        <article class="project-card project-case">
           <div class="project-head">
             <h3>Patient Management Portal</h3>
-            <a href="https://github.com/knight-54/Patient-Management-Portal" target="_blank" rel="noopener" class="project-link">Source ↗</a>
+            <div class="project-links">
+              <a href="https://github.com/knight-54/Patient-Management-Portal" target="_blank" rel="noopener" class="project-link">Source ↗</a>
+              <!-- <a href="LIVE_DEMO_URL" target="_blank" rel="noopener" class="project-link">Live ↗</a> -->
+            </div>
           </div>
-          <ul class="project-points">
-            <li>Architected a microservices ecosystem using gRPC and Apache Kafka for event-driven streaming, reducing inter-service communication latency by 35%.</li>
-            <li>Engineered a secure API Gateway with JWT auth and CloudFormation (IaC) for automated AWS deployment, cutting provisioning time by 50%.</li>
-          </ul>
+
+          <div class="project-shots">
+            <img class="project-shot" src="assets/pmp-login.png" alt="Patient Management Portal login screen" />
+            <img class="project-shot" src="assets/pmp-book-appointment.png" alt="Book Appointment screen with doctor selection and time slot picker" />
+            <img class="project-shot" src="assets/pmp-billing.png" alt="Billing dashboard showing invoices, totals, and payment status" />
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">the problem</p>
+            <p>Healthcare systems need services that can scale independently — appointments,
+              records, and auth all have different load patterns — but tightly coupled
+              synchronous calls between services turn one slow dependency into a full outage.</p>
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">what i built</p>
+            <p>A microservices ecosystem using gRPC for inter-service calls and Apache Kafka
+              for event-driven streaming so services communicate asynchronously where it matters.
+              Added a secure API Gateway with JWT auth in front of everything, and defined the
+              full AWS deployment as CloudFormation (IaC) instead of manual provisioning.</p>
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">impact</p>
+            <p>Inter-service communication latency down 35%; infrastructure provisioning time
+              cut 50% by moving to IaC.</p>
+          </div>
+
           <ul class="tag-list mono">
             <li>Spring Boot</li><li>Microservices</li><li>gRPC</li><li>Kafka</li><li>Docker</li><li>AWS</li>
           </ul>
         </article>
+
+        <!-- PROJECT 3 — OPEN SOURCE -->
+        <article class="project-card project-case">
+          <div class="project-head">
+            <h3>Open Source — aws-cdk</h3>
+            <div class="project-links">
+              <a href="https://github.com/aws/aws-cdk/pull/38533#issue-5115493428" target="_blank" rel="noopener" class="project-link">PR #38533 ↗</a>
+            </div>
+          </div>
+
+          <div class="project-shots project-shots-single">
+            <img class="project-shot" src="assets/aws-cdk-code.png" alt="TypeScript helper function hashCapacityProviderStrategies added in the PR" />
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">the problem</p>
+            <p>When an ECS EC2 service uses a CodeDeploy deployment controller, changes to
+              <code>capacityProviderStrategies</code> on the underlying CloudFormation resource
+              don't natively trigger an environment refresh — CodeDeploy relies on deployment
+              group hooks rather than standard resource-state updates, so updates to instance
+              architecture or allocation weights silently fail to apply.</p>
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">what i built</p>
+            <p>A deterministic helper, <code>hashCapacityProviderStrategies</code>, that computes
+              a stable hash signature of the active strategy configuration, plus an evaluation
+              check in the <code>Ec2Service</code> construct that detects a CodeDeploy setup and
+              applies a <code>DeploymentConfiguration.TriggerHash</code> override on the underlying
+              CfnService — forcing CloudFormation to register the mutation and correctly kick off
+              the CodeDeploy lifecycle.</p>
+          </div>
+
+          <div class="case-block">
+            <p class="case-label mono">status</p>
+            <p>Open PR against <code>aws/aws-cdk</code>, currently pending maintainer review —
+              closes a tracked bug report and ships with a dedicated unit test.</p>
+          </div>
+
+          <ul class="tag-list mono">
+            <li>TypeScript</li><li>AWS CDK</li><li>ECS</li><li>CodeDeploy</li><li>CloudFormation</li>
+          </ul>
+        </article>
+
       </div>
     </section>
 
@@ -176,8 +276,12 @@
             <ul class="tag-list mono"><li>MongoDB</li><li>MySQL</li></ul>
           </div>
           <div class="skill-group">
+            <p class="card-label mono">devops &amp; infra</p>
+            <ul class="tag-list mono"><li>Docker</li><li>Kafka</li><li>gRPC</li><li>Terraform</li><li>CI/CD</li></ul>
+          </div>
+          <div class="skill-group">
             <p class="card-label mono">tools</p>
-            <ul class="tag-list mono"><li>Git</li><li>GitHub</li><li>Docker</li><li>Postman</li></ul>
+            <ul class="tag-list mono"><li>Git</li><li>GitHub</li><li>Postman</li></ul>
           </div>
         </div>
       </div>
@@ -189,8 +293,7 @@
         <p class="section-label mono">// achievements</p>
         <ul class="achv-list">
           <li><span class="achv-title">LeetCode</span><span class="achv-desc">1610 rating, top 15% globally — 300+ DSA problems solved</span></li>
-          <li><span class="achv-title">Distributed Collaborative IDE</span><span class="achv-desc">350+ users, supporting real-time multi-user sessions in production</span></li>
-          <li><span class="achv-title">Open Source (aws-cdk)</span><span class="achv-desc">Fixed ECS redeploy bug in CloudFormation synthesis</span></li>
+          <li><span class="achv-title">Open Source (aws-cdk)</span><span class="achv-desc">Open PR fixing an ECS redeploy bug in CloudFormation synthesis — pending review</span></li>
           <li><span class="achv-title">Data Science Training</span><span class="achv-desc">Intensive program conducted by IIT Guwahati</span></li>
           <li><span class="achv-title">IQube</span><span class="achv-desc">Secured AIR 107 in the National IQ Examination</span></li>
         </ul>
